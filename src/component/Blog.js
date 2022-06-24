@@ -37,60 +37,10 @@ export default function Blog(props) {
 
   return (
     <Card sx={{ maxWidth: 700 }} className="centerBlog"  key={props.index}>
-      <div>
-      <h3>brand</h3>
-      <p>{props.data.brand}</p>
-      </div>
-
-      <div>
-      <h3>category</h3>
-      <p>{props.data.category}</p>
-      </div>
-
-      <div>
-      <h3>description</h3>
-      <p>{props.data.description}</p>
-      </div>
-      
-      <div>
-      <h3>discountPercentage</h3>
-      <p>{props.data.discountPercentage}</p>
-      </div>
-      
-      <div>
-      <h3>id</h3>
-      <p>{props.data.id}</p>
-      </div>
-      
-      <div>
-      <h3>images</h3>
-      <img src={props.data.images[0]} alt='image'></img>
-      </div>
-      
-      <div>
-      <h3>price</h3>
-      <p>{props.data.price}</p>
-      </div>
-      
-      <div>
-      <h3>rating</h3>
-      <p>{props.data.rating}</p>
-      </div>
-
-      <div>
-      <h3>stock</h3>
-      <p>{props.data.stock}</p>
-      </div>
-      
-
-
-
-
-
-      {/* <CardHeader
+      <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            {props.data.authorId}
           </Avatar>
         }
         action={
@@ -98,20 +48,19 @@ export default function Blog(props) {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={props.data.title}
+        subheader={(Date(props.data.createdAt)).split("GMT")[0]}
       />
+      {/* {console.log(props.image)} */}
       <CardMedia
         component="img"
         // height="194"
-        image={props.image}
+        image={props.data.image[0]}
         alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {props.data.blog}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -158,8 +107,58 @@ export default function Blog(props) {
             Set aside off of the heat to let rest for 10 minutes, and then serve.
           </Typography>
         </CardContent>
-      </Collapse> */}
+      </Collapse>
+
+{/* 
+      <div>
+      <h3>brand</h3>
+      <p>{props.data.brand}</p>
+      </div>
+
+      <div>
+      <h3>category</h3>
+      <p>{props.data.category}</p>
+      </div>
+
+      <div>
+      <h3>description</h3>
+      <p>{props.data.description}</p>
+      </div>
+      
+      <div>
+      <h3>discountPercentage</h3>
+      <p>{props.data.discountPercentage}</p>
+      </div>
+      
+      <div>
+      <h3>id</h3>
+      <p>{props.data.id}</p>
+      </div>
+      
+      <div>
+      <h3>images</h3>
+      <img src={props.data.images[0]} alt='image'></img>
+      </div>
+      
+      <div>
+      <h3>price</h3>
+      <p>{props.data.price}</p>
+      </div>
+      
+      <div>
+      <h3>rating</h3>
+      <p>{props.data.rating}</p>
+      </div>
+
+      <div>
+      <h3>stock</h3>
+      <p>{props.data.stock}</p>
+      </div>
+      
+ */}
+
     </Card>
   );
+
 }
 

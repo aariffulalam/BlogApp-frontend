@@ -7,10 +7,11 @@ const NoteState = (props)=>{
 
     const getFakeData= async()=>{
 
-        const resp = await axios.get("https://dummyjson.com/products")
+        const resp = await axios.get("http://localhost:8000/blog")
         const data = resp.data
         // console.log(data)
-        setState(data.products)
+        // console.log(data.data)
+        setState(data.data)
     }
     
     // const data = resp.json()

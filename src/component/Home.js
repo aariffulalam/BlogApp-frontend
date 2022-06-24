@@ -13,7 +13,8 @@ function Home(){
             {
                 data.map((element,index)=>{
                         // console.log("i am working", index)
-                        // console.log(element)
+                        // console.log(element.image[0])
+                        // console.log(index)
                         return <Blog data={element} key={index}/>
                 })
             }
