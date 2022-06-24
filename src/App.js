@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./component/Home";
+// import AddBlog from "./component/AddBlog";
+// import Signup from "./component/Signup";
+// import Login from "./component/Login";
+
+
+// import MuiVerient from "./component/MuiVerient";
+// import MuiButton from "./component/MuiButton";
+
+import NoteState from "./context/NoteState";
 
 function App() {
   return (
+    <NoteState>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home/>
+      {/* <AddBlog/> */}
+      
+      {/* <Signup/> */}
+      {/* <Login/> */}
+
+      {/* <MuiVerient/> */}
+      {/* <MuiButton/> */}
     </div>
+    </NoteState>
   );
 }
 
