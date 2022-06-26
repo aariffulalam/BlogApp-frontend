@@ -1,28 +1,28 @@
-import Home from "./component/Home";
+// import Home from "./component/Home/Home";
 // import AddBlog from "./component/AddBlog";
-// import Signup from "./component/Signup";
-// import Login from "./component/Login";
+// import Signup from "./component/Signup/Signup";
+import Login from "./component/Login/Login";
 
 
 // import MuiVerient from "./component/MuiVerient";
 // import MuiButton from "./component/MuiButton";
 
-import NoteState from "./context/NoteState";
+import BlogState from "./context/blog/BlogState";
 
 function App() {
   return (
-    <NoteState>
-    <div className="App">
-      <Home/>
+    <BlogState>
+    {/* <div className="App"> */}
+      <Login/>
+      {/* <Home/> */}
       {/* <AddBlog/> */}
       
       {/* <Signup/> */}
-      {/* <Login/> */}
 
       {/* <MuiVerient/> */}
       {/* <MuiButton/> */}
-    </div>
-    </NoteState>
+    {/* </div> */}
+    </BlogState>
   );
 }
 

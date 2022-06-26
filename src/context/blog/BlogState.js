@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import noteContext from "./NoteContext";
+import blogContext from "./BlogContext";
 
 import axios from "axios";
 
-const NoteState = (props)=>{
+const BlogState = (props)=>{
 
     const getFakeData= async()=>{
 
@@ -28,10 +28,10 @@ const NoteState = (props)=>{
 
 
     return (
-        <noteContext.Provider value={state}>
+        <blogContext.Provider value={state}>
             {props.children}
-        </noteContext.Provider>
+        </blogContext.Provider>
     )
 }
 
-export default NoteState;
+export default BlogState;
