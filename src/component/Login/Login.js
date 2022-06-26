@@ -21,7 +21,7 @@ function Login(){
 
     function submitLoginData(){
         console.log(loginData,loginData.email,loginData.email)
-        axios.get('http://localhost:8000/auth/signup/',loginData
+        axios.get('http://localhost:8000/auth/login/',loginData
         // {
         //     email:loginData.email,
         //     password:loginData.password,
