@@ -55,7 +55,7 @@ export default function Blog(props) {
       <CardMedia
         component="img"
         // height="194"
-        image={props.data.image[0]}
+        image={'http://localhost:8000/'+ props.data.image[0]}
         alt="Paella dish"
       />
       <CardContent>

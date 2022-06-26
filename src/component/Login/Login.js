@@ -20,19 +20,21 @@ function Login(){
     }
 
     function submitLoginData(){
-        console.log(loginData,loginData.email,loginData.email)
-        axios.get('http://localhost:8000/auth/login/',loginData
-        // {
-        //     email:loginData.email,
-        //     password:loginData.password,
-        // }
+        console.log(loginData, loginData.email, loginData.password)
+        axios.post('http://localhost:8000/auth/login/',//loginData
+        {
+            email:loginData.email,
+            password:loginData.password,
+        }
         )
         .then((response)=>{
-            console.log("successfully signedup",response)
+            console.log("successfully Logedin",response)
+            alert("successfully User logedin")
         })
         .catch((error)=>{
             console.log("kuch to Login me fat gaya")
             console.log(error)
+            alert(error.response.data.error)
         })
     } 
 

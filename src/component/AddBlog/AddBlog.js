@@ -1,5 +1,11 @@
+import {Typography} from '@mui/material'
+
 function AddBlog(){
-    return <h1>AddBlog Page</h1>
+    return (
+        <Typography variant='div'>
+            <h1>add blog</h1>
+        </Typography>
+    )
 }
 
 export default AddBlog;

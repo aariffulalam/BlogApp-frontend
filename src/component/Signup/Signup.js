@@ -39,10 +39,12 @@ function Signup(){
         })
         .then((response)=>{
             console.log("successfully signedup",response)
+            alert("successfully User signedup")
         })
         .catch((error)=>{
             console.log("kuch to Signup me fat gaya")
             console.log(error)
+            alert(error.response.data.error)
         })
     } 
 
