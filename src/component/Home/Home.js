@@ -9,7 +9,7 @@ function Home(){
     return data && <div className="centerHome">
             <h1>Home</h1>
             {
-                data.map((element,index)=>{
+                data.blogs.map((element,index)=>{
                         return <Blog data={element} key={index}/>
                 })
             }
