@@ -1,8 +1,8 @@
-import Blog from "../Blog/Blog";
+import Blog from "./Blog";
 import "./Home.css";
 
 import React, {useContext} from "react";
-import blogContext from "../../context/blog/BlogContext";
+import blogContext from "../context/blog/BlogContext";
 
 function Home(){
     const data = useContext(blogContext)

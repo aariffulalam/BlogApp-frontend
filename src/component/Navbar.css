@@ -1,0 +1,15 @@
+nav{
+    margin: 0;
+    padding: 0;
+    background-color: aquamarine;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+.navLi{
+    margin: 1rem;
+    padding: 0.5rem;
+}

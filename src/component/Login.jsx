@@ -1,17 +1,17 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import {Button, Stack, Typography, TextField} from "@mui/material";
-import axios from "axios";
-import authContext from "../../context/authContext/authContext";
-// import  from '@mui/material/TextField';
+import authContext from "../context/authContext/authContext";
 
+import {useNavigate} from "react-router-dom"
 
 function Login(){
+    const navigate = useNavigate()
 
     const {handleLoginInput, submitLoginData} = useContext(authContext)
     
 
     return (
-        <Typography variant="form">
+        <Typography variant="form" className="centerDiv auth">
             <Stack spacing={5}>
                 <Typography variant="h5">Login Page</Typography>
                 <Typography>Please fill in this form to  login an account.</Typography>
@@ -36,7 +36,10 @@ function Login(){
                     <Button variant="contained" type="submit" size="small"  onClick={submitLoginData} color="info">
                         Info
                     </Button>
-                </Stack>           
+                </Stack> 
+                <Stack display="block" direction="row" spacing={4}>
+                    <button onClick={()=>navigate('/signup')}>Create Account</button>
+                </Stack>            
             </Stack>
         </Typography>    
     )

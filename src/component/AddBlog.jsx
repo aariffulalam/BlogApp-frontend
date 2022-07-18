@@ -1,41 +1,10 @@
-import React, { useState } from 'react';
-
 import { Typography, TextField, Stack, Button } from '@mui/material'
-import axios from 'axios';
+import { useContext } from 'react';
 
+import blogContext from '../context/blog/BlogContext';
 
 function AddBlog() {
-
-    const [blogState, setBlogState] = useState({
-        title : "",
-        blog : "",
-        image : []
-    })
-
-    function handleBlogData(e){
-        const name = e.target.name
-        const value = e.target.value
-        setBlogState({...blogState, [name]: value})
-    }
-
-    function handleBlogImage(e){
-        const file = e.target.files[0]
-        const name = e.target.name
-        setBlogState({...blogState,[name]:file})
-        // console.log(event)
-    }
-
-    async function submitBlogData(){
-        const url = "http://localhost:8000/blog/29"
-        await axios.post(url, blogState , {
-            headers:{
-                "Content-type" : "multipart/form-data"
-            }
-        })
-
-
-        console.log(blogState)
-    }
+    const {handleBlogData, handleBlogImage, submitBlogData} = useContext(blogContext)
 
     return (
         <Typography variant='form'>

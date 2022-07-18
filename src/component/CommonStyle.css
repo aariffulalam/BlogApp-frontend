@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.centerDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+}
+.auth{
+    border: 0.2rem solid olivedrab;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+}
