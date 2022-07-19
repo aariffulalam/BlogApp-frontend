@@ -62,7 +62,7 @@ export default function Blog(props) {
         component="img"
         // height="194"
         image={'http://localhost:8000/'+ props.data.image[0]}
-        alt="Paella dish"
+        alt={(props.data.image[0].split("-")[1]).split(".")[0]}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">

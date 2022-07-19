@@ -63,14 +63,23 @@ const BlogState = (props)=>{
 
     async function deleteBlog(id){
         const url = `http://localhost:8000/blog/${id}`;
+        
         await axios.delete(url,{
             headers:{
                 "Content-type" : "application/json",
                 "authorization" : "bearer " + token
             }
         })
-        // navigate('/')
-        // getBlogsData()
+        .then((response)=>{
+            console.log("successfully deleted", response)
+            alert("successfully blog deleted")
+            navigate('/')
+            getBlogsData()
+        })
+        .catch((error)=>{
+            console.log(error)
+            alert(error.response.data.message)
+        })
     }
 
     const values = {
