@@ -7,8 +7,6 @@ import axios from "axios";
 
 const BlogState = (props)=>{
 
-    const {loginData} = useContext(authContext)
-
     const navigate = useNavigate();
 
     const {getFromLocal} = useContext(authContext);
@@ -61,6 +59,28 @@ const BlogState = (props)=>{
 
     }
 
+    async function addReaction(id){
+        console.log( id)
+        const url = `http://localhost:8000/reaction/post/${id}`
+        await axios.post(url,{
+            like:true,
+            dislike:false
+        },{
+            headers:{
+                "Content-type" : "application/json",
+                "authorization" : "bearer " + token,
+            }
+        })
+        .then((response)=>{
+            console.log("succesfully liked", response)
+            alert(response.data.message)  
+        })
+        .catch((error)=>{
+            console.log("liked error",error)
+            alert("liked error")
+        })
+    }
+
     async function deleteBlog(id){
         const url = `http://localhost:8000/blog/${id}`;
         
@@ -72,7 +92,7 @@ const BlogState = (props)=>{
         })
         .then((response)=>{
             console.log("successfully deleted", response)
-            alert("successfully blog deleted")
+            alert(response.data.message)
             navigate('/')
             getBlogsData()
         })
@@ -87,7 +107,8 @@ const BlogState = (props)=>{
         handleBlogData,
         handleBlogImage,
         submitBlogData,
-        deleteBlog
+        deleteBlog,
+        addReaction
     }
 
     return (

@@ -38,7 +38,7 @@ export default function Blog(props) {
     setExpanded(!expanded);
   };
 
-  const {deleteBlog} = useContext(blogContext);
+  const {deleteBlog, addReaction} = useContext(blogContext);
 
 
   return (
@@ -70,7 +70,7 @@ export default function Blog(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" onClick={()=>addReaction(props.data.id)}>
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
